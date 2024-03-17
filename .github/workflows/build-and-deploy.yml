@@ -15,6 +15,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          passphrase: ${{ secrets.PASSPHRASE }} 
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh 

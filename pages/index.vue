@@ -14,7 +14,7 @@
       <iframe class="w-full aspect-video ..." src="https://www.youtube.com/embed/WGgExlJXmhc?si=Lt33DCA7DK1qI3sl"></iframe>
     </div>
     <div class="lg:flex-grow md:w-1/2 lg:pl-16 md:pl-16 flex flex-col md:items-start  items-center t-center md:text-left ">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">Fraternidad de Lideres Cristianos
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">Fraternidad de Lideres Cristianos 1
       </h1>
       <p class="mb-8 leading-relaxed ">
         CLF (siglas en ingles CHRISTIAN LEADERS FELLOWSHIP) es una iniciativa de liderazgo global que se esfuerza por unir a los líderes cristianos a través de la teología basada en la Biblia, implementar soluciones prácticas para el ministerio y fomentar el compañerismo arraigado en el evangelio.

@@ -23,7 +23,8 @@ jobs:
             git pull 
             yarn  
             yarn build  
-            pm2 restart dhkim
+            pm2 start yarn --name clf_app -- --port 3001
+            pm2 restart clf-app
 
       # - name: Install PM2
       #   run: npm install pm2@latest -g

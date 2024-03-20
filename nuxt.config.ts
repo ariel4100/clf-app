@@ -13,6 +13,9 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'CLF, Cristianismo, Fraternidad, Líderes Cristianos, Palabra, Gracia, Fe' },
         { name: 'icon', content: 'https://clflatam.org/wp-content/uploads/2015/12/cropped-Favicon-CLF-azul-192x192.png' },
       ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: 'https://clflatam.org/wp-content/uploads/2015/12/cropped-Favicon-CLF-azul-192x192.png' }, // Agrega el favicon
+      ]
     }
   },
   devtools: { enabled: true },

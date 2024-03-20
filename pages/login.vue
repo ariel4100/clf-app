@@ -4,30 +4,40 @@
     middleware: ['auth']
   })
   useHead({
-    title: 'Login',
+    title: 'Ingresar a tu cuenta',
     meta: [
       {
+        name: 'title',
+        content: 'Ingresar a tu cuenta'
+      },
+      {
         name: 'description',
-        content: 'Login to your account'
-      }
+        content: 'Ingresar a tu cuenta en CLF Argentina - La Fraternidad de Lideres Cristianos'
+      }, 
     ] 
-  })
+  }) 
 
   const client = useSupabaseClient()
   const email = ref('')
   const visible = ref(false)
   const password = ref('')
+  const loading = ref(false) 
  
 const login = async () => {
-    const { error } = await client.auth.signInWithPassword({
-        email: email.value,
-        password: password.value
-    })
-    if (error) {
-      alert(error.message)
-    } else {
-      await navigateTo('/auth')
-    } 
+  loading.value = true
+
+  const { error } = await client.auth.signInWithPassword({
+      email: email.value,
+      password: password.value
+  })
+  loading.value = false 
+
+  if (error) {
+    alert('Las credenciales son incorrectas')
+    // alert(error.message)
+  } else {
+    await navigateTo('/auth/videos')
+  } 
 }
 
 </script>
@@ -87,20 +97,28 @@ const login = async () => {
 
                   <!--Submit button-->
                   <div class="mb-12 pb-1 pt-1 text-center">
-                    <button
-                    @click="login()"
+                    <!-- <button
+                      @click="login()"
                       class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                      type="button"
-                      data-twe-ripple-init
-                      data-twe-ripple-color="light"
+                      type="button" 
                       style="
                         background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
                       ">
                       Ingresar
-                    </button>
-
+                    </button> -->
+                    <v-btn  
+                      :loading="loading" 
+                      size="large"
+                      rounded 
+                      :color="'primary'" 
+                      class="inline-block w-full"
+                      @click="login()"
+                    >
+                      Ingresar 
+                      <v-icon icon="mdi-chevron-right" end></v-icon>
+                    </v-btn>  
                     <!--Forgot password link-->
-                    <a href="#!">Olvidaste la contraseña?</a>
+                    <!-- <a href="#!">Olvidaste la contraseña?</a> -->
                   </div>
 
                   <!--Register button-->
@@ -108,7 +126,7 @@ const login = async () => {
                     <p class="mb-0 me-2">No tienes una cuenta?</p>
                     <NuxtLink
                       to="/register"
-                      class="">
+                      class="hover:underline hover:text-primary">
                       Registrarse
                     </NuxtLink>
                   </div>

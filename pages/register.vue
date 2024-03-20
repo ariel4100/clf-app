@@ -4,15 +4,19 @@
     middleware: ['auth']
   })
   useHead({
-    title: 'Registrarse CLF',
+    title: 'Registrarse CLF Argentina',
     meta: [
       {
         name: 'description',
-        content: 'Registrarse en CLF'
-      }
+        content: 'Registrarse en CLF Argentina'
+      },
+      {
+        name: 'description',
+        content: 'Registrarse en CLF Argentina - La Fraternidad de Lideres Cristianos'
+      }, 
     ] 
-  })
-
+  }) 
+ 
   const client = useSupabaseClient()
   const form = ref({
       name: null,
@@ -36,7 +40,8 @@
     const res = await event
 
     if (!res.valid) {
-      alert(JSON.stringify(res.errors, null, 2))
+      alert('Error al validar')
+      // alert(JSON.stringify(res.errors, null, 2))
       loading.value = false 
       return false
     }
@@ -44,9 +49,10 @@
     const { error } = await client.auth.signUp(form.value)
     if (error) {
       alert(error.message)
+      // alert('Error al validar')
       loading.value = false
     } else {
-      await navigateTo('/auth')
+      await navigateTo('/auth/videos')
       loading.value = false
     } 
   }

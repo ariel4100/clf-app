@@ -1,3 +1,24 @@
+
+<script setup>
+  // definePageMeta({
+  //   layout: false, 
+  //   middleware: ['auth']
+  // })
+  useHead({
+    title: 'Contacto',
+    meta: [
+      {
+        name: 'title',
+        content: 'Contacto'
+      },
+      {
+        name: 'description',
+        content: "Contactanos -  ¿Tiene alguna pregunta? Nos gustaria poder escuharte. Envianos un mensaje y responderemos lo mas antes posible."
+      }, 
+    ] 
+  }) 
+
+</script>
 <template>
 <!-- Container for demo purpose -->
 <div class="container my-24 mx-auto md:px-6">

@@ -1,11 +1,52 @@
+
+<script setup>
+  // definePageMeta({
+  //   layout: false, 
+  //   middleware: ['auth']
+  // })
+  useHead({
+    title: 'CLF Argentina - La Fraternidad de Lideres Cristianos',
+    meta: [
+      {
+        name: 'title',
+        content: 'CLF Argentina - La Fraternidad de Lideres Cristianos'
+      },
+      {
+        name: 'description',
+        content: 'La Fraternidad de Líderes Cristianos (CLF) trabaja bajo un lema: Solo por la Palabra, Solo por la Gracia y Solo por la Fe'
+      },
+      {
+        name: 'keywords',
+        content: 'CLF, Cristianismo, Fraternidad, Líderes Cristianos, Palabra, Gracia, Fe'
+      },
+      {
+        name: 'url',
+        content: 'https://clfargentina.org'
+      },
+    ] 
+  }) 
+  useSeoMeta({
+    ogImage: 'https://clflatam.org/wp-content/uploads/2015/12/cropped-Favicon-CLF-azul-192x192.png'
+  })
+</script>
 <template> 
-  <v-carousel hide-delimiters>
+  <v-carousel hide-delimiters class="relative z-0 pointer-events-auto">
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
       :src="item.src"
       cover
-    ></v-carousel-item>
+    >
+    <div class="carousel-mask z-10 pointer-events-none">
+      <div class="flex items-center justify-center h-full">
+        <div class="">
+          <h1 class="text-3xl md:text-5xl text-center text-white font-bold leading-none">La Fraternidad de Lideres Cristianos</h1>
+          <p class="text-xl md:text-3xl text-center text-white  leading-none mt-4">"Vamos más allá de la doctrina y la denominación y unámonos solo con la Palabra."</p>
+        </div>
+      </div> 
+    </div>
+  
+  </v-carousel-item>
   </v-carousel>
 
   <section class="text-gray-600 body-font">
@@ -14,7 +55,7 @@
       <iframe class="w-full aspect-video ..." src="https://www.youtube.com/embed/WGgExlJXmhc?si=Lt33DCA7DK1qI3sl"></iframe>
     </div>
     <div class="lg:flex-grow md:w-1/2 lg:pl-16 md:pl-16 flex flex-col md:items-start  items-center t-center md:text-left ">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">Fraternidad de Lideres Cristianos 1
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">Fraternidad de Lideres Cristianos
       </h1>
       <p class="mb-8 leading-relaxed ">
         CLF (siglas en ingles CHRISTIAN LEADERS FELLOWSHIP) es una iniciativa de liderazgo global que se esfuerza por unir a los líderes cristianos a través de la teología basada en la Biblia, implementar soluciones prácticas para el ministerio y fomentar el compañerismo arraigado en el evangelio.
@@ -126,9 +167,9 @@
           {
             src: 'https://static.wixstatic.com/media/125365_5c3ba44f98654409a91e9eff983126a1f000.jpg/v1/fill/w_1280,h_632,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/125365_5c3ba44f98654409a91e9eff983126a1f000.jpg',
           },
-          // {
-          //   src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          // },
+          {
+            src: 'https://www.clf.ac/images/main/clf_main_img2.jpg',
+          },
           // {
           //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
           // },
@@ -137,3 +178,14 @@
     },
   }
 </script>
+
+<style>
+.carousel-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+</style>

@@ -2,9 +2,21 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'CLF Argentina - La Fraternidad de Lideres Cristianos', 
+      meta: [
+        { name: 'description', content: 'La Fraternidad de Líderes Cristianos (CLF) trabaja bajo un lema: Solo por la Palabra, Solo por la Gracia y Solo por la Fe' },
+        { name: 'author', content: 'CLF Argentina' },
+        { name: 'keywords', content: 'CLF, Cristianismo, Fraternidad, Líderes Cristianos, Palabra, Gracia, Fe' },
+        { name: 'icon', content: 'https://clflatam.org/wp-content/uploads/2015/12/cropped-Favicon-CLF-azul-192x192.png' },
+      ],
+    }
+  },
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  
+  css: ['~/assets/css/main.css'], 
   devServer: {
     port: 3001,
   },

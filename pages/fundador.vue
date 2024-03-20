@@ -1,3 +1,24 @@
+
+<script setup>
+  // definePageMeta({
+  //   layout: false, 
+  //   middleware: ['auth']
+  // })
+  useHead({
+    title: 'Fundador CLF',
+    meta: [
+      {
+        name: 'title',
+        content: 'Fundador CLF'
+      },
+      {
+        name: 'description',
+        content: 'Fundador del Congreso de Líderes Cristianos (CLF), Fundador de Misión Buenas Nuevas, Fundador de Fraternidad Internacional de Jóvenes (IYF)'
+      }, 
+    ] 
+  }) 
+
+</script>
 <template> 
   <section class="background-radial-gradient mb-32 text-center lg:text-left">
     <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://clflatam.org/wp-content/uploads/2021/02/Fondo-de-Fundador-1.jpg')] h-[500px]">

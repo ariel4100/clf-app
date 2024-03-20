@@ -1,3 +1,24 @@
+
+<script setup>
+  // definePageMeta({
+  //   layout: false, 
+  //   middleware: ['auth']
+  // })
+  useHead({
+    title: 'Saludos',
+    meta: [
+      {
+        name: 'title',
+        content: 'Saludos'
+      },
+      {
+        name: 'description',
+        content: 'Cuando los líderes cristianos se unen para enfocarse únicamente en la Biblia, dejando de lado tanto la denominación como la doctrina, entonces Dios obrará de maneras inimaginables y el mundo entero será renovado por la Palabra de Dios.'
+      }, 
+    ] 
+  }) 
+
+</script>
 <template> 
   <section class="background-radial-gradient mb-20 text-center lg:text-left">
     <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://clflatam.org/wp-content/uploads/2021/02/Fondo-de-Saludos.jpg')] h-[500px]">

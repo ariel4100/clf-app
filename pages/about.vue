@@ -1,3 +1,24 @@
+
+<script setup>
+  // definePageMeta({
+  //   layout: false, 
+  //   middleware: ['auth']
+  // })
+  useHead({
+    title: 'Acerca de CLF',
+    meta: [
+      {
+        name: 'title',
+        content: 'Acerca de CLF'
+      },
+      {
+        name: 'description',
+        content: 'La Fraternidad de Líderes Cristianos (CLF) trabaja bajo un lema: Solo por la Palabra, Solo por la Gracia y Solo por la Fe'
+      }, 
+    ] 
+  }) 
+
+</script>
 <template> 
   <section class="background-radial-gradient mb-32 text-center lg:text-left">
     <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://mdbcdn.b-cdn.net/img/new/standard/nature/071.jpg')] h-[500px]">
@@ -21,8 +42,8 @@
   <div class="container  mx-auto md:px-6">  
     <section class="text-gray-600 body-font">
       <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"> 
-        <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-          <h1 class="title-font sm:text-4xl text-3xl mb-5 font-medium text-gray-900">PREDICAR EL EVANGELIO DE CRISTO EN TODO EL MUNDO 
+        <div class="lg:flex-grow md:w-1/2  md:pl-16 flex flex-col md:items-start md:text-left items-center text-center justify-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-5 font-medium text-gray-900 t-center w-full">PREDICAR EL EVANGELIO DE CRISTO EN TODO EL MUNDO 
           </h1>
           <p class="mb-8 leading-relaxed">
             La situación actual con el cristianismo moderno, dividido por doctrinas y denominaciones, exige desesperadamente pastores que practiquen un ministerio de verdadero arrepentimiento y fe. Es por eso por lo que el CLF se formó para unir y compartir compañerismo con líderes cristianos de todo el mundo más allá de las doctrinas y denominaciones bajo el lema, 'Regresemos solo a la Biblia, corramos solo por fe'. Más allá del idioma, la raza y la denominación, los pastores que se unen reciben nuevas fuerzas a medida que establecen la palabra de Dios para alinear sus intereses y trabajar poderosamente en la predicación del evangelio de Cristo en todo el mundo.      </p>
@@ -39,6 +60,18 @@
           <p class="mb-8 leading-relaxed">
             La Fraternidad de Líderes Cristianos (CLF) existe para revivir iglesias, comunidades y países.
           </p>
+          <p class="mb-8 leading-relaxed">
+            Las iglesias activas mejoran colectivamente
+            sus comunidades y crean redes de seguridad
+            para los jóvenes al proporcionar salidas
+            seguras para el aprendizaje y la
+            participación.
+          </p>
+          <p class="mb-8 leading-relaxed">
+            Cuando las organizaciones cristianas se
+            conectan y descubren vías de colaboración,
+            la evangelización se fortalece tanto a nivel local como a nivel  global.
+          </p>
         
         </div>
         <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center  ">
@@ -47,6 +80,19 @@
           </h1>
           <p class="mb-8 leading-relaxed">
             ¿Esta haciendo todo lo que puede con su ministerio? CLF puede ayudar a llenar los vacíos para llevar a su iglesia al siguiente nivel.
+          </p>
+          <p class="mb-8 leading-relaxed">
+            Eventos regionales y nacionales que incluyen
+            conferencias, grupos de becas y actividades
+            multiculturales.
+          </p>
+          <p class="mb-8 leading-relaxed">
+            Módulos de capacitación en educación
+            teológica y evangelización en línea
+            acomodados a su horario.
+          </p>
+          <p class="mb-8 leading-relaxed">
+            Trabajar en red con líderes de iglesias de todo el mundo.
           </p>
         
         </div>

@@ -1,33 +1,18 @@
-<template> 
-  <h1 class="mt-20">Videos</h1>
-
-  <pre>
-  {{ user }}
-  </pre>
-  <v-btn 
-    color="success" 
-    style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);"
-    @click="logout()"
-  >
-    Salir 
-    <v-icon icon="mdi-chevron-right" end></v-icon>
-  </v-btn> 
-
-  <v-snackbar
-      v-model="snackbar"
-    >
-      {{ text }}
-
-      <template v-slot:actions>
-        <v-btn
-          color="pink"
-          variant="text"
-          @click="snackbar = false"
-        >
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
+<template>  
+<section class="container  mx-auto  px-6">
+  <div class="mt-32 mb-10">
+    <h1 class=" text-2xl font-semibold">Bienvenido!, {{ user?.email }}</h1>
+    <p class="leading-relaxed my-3">
+      Aquí encontrarás los mejores videos de la Fraternidad de Lideres Cristianos (CLF), para que puedas aprender sobre la palabra de Dios.
+    </p>
+  </div>
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-10">
+      <div class="flex mb-5" v-for="item in 4">  
+        <iframe class="w-full aspect-video ..." src="https://www.youtube-nocookie.com/embed/6arpM8aWvdo?si=P65I8jAmbYbfK3Uh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div> 
+    </div>
+  </section>
+ 
 </template>
 
 <script setup>
@@ -36,14 +21,8 @@
   })
 
   useHead({
-    title: 'Cursos de lideres cristianos',
-    meta: [
-      {
-        name: 'description',
-        content: 'Login to your account'
-      }
-    ] 
-  })
+    title: 'Videos de CLF', 
+  }) 
 
   const user = useSupabaseUser()
   const client = useSupabaseClient()

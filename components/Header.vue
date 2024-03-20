@@ -52,7 +52,20 @@
 
     <v-list density="compact" nav>
       
-      <v-list-item v-for="item in menuItems" :title="item.title" :value="item.title" :to="item.path"></v-list-item>
+      <v-list-item v-for="item in menuItems" :title="item.title" :value="item.title" @click="handleItemClick(item)" >
+        <v-menu v-if="item.submenu.length > 0" activator="parent">
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in item.submenu"
+              :key="index"
+              :value="index"
+              @click="handleItemClick(item)" 
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 
@@ -61,7 +74,17 @@
 <script setup>
 import { ref } from 'vue'
 const user = useSupabaseUser()
+const client = useSupabaseClient()
 const drawer = ref(false)
+
+const logout = async () => {
+      const { error } = await client.auth.signOut()
+      if (error) {
+      alert(error.message)
+    } else {
+      await navigateTo('/login')
+    } 
+  }
 console.log(user.value)
 const submenuAbout = [
     { title: 'Misión', path: '/about', icon: 'home', id: 'menu-activador2' },
@@ -83,27 +106,21 @@ if(user.value == null){
       { title: 'NOSOTROS', path: '/about', icon: 'home', id: 'menu-activador', submenu: submenuAbout },
       { title: 'VIDEOS', path: '/auth/videos', icon: 'face', id: 'menu-activador2', submenu: [] },
       { title: 'CONTACTO', path: '/contact', icon: 'lock_open', id: 'menu-activador2', submenu: [] }, 
-      // { title: 'CONTACTO', path: '/contact', icon: 'lock_open', id: 'menu-activador2', submenu: [] }, 
+      { title: 'Cerrar Sesion', path: () => logout(), icon: 'lock_open', id: 'menu-activador2', submenu: [] }, 
   ]
 }
-
-const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: 'ChartPieIcon' },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: 'CursorArrowRaysIcon' },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: 'FingerPrintIcon' },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: 'SquaresPlusIcon' },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: 'ArrowPathIcon' },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: 'PlayCircleIcon' },
-  { name: 'Contact sales', href: '#', icon: 'PhoneIcon' },
-]
+ 
 
 async function handleItemClick(item) {
+  if(typeof item.path == 'string'){ 
     if (item.submenu?.length > 0) { 
     }else{
-      await navigateTo(item.path);
+      await navigateTo(item.path) 
     }
+  }else{  
+    await item.path();
   }
+   
+}
 const mobileMenuOpen = ref(false)
 </script>
